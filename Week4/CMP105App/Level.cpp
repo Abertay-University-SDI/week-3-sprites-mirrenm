@@ -1,5 +1,6 @@
 #include "Level.h"
 #include "Player.h"
+#include "Enemy.h"
 
 Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
@@ -9,7 +10,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	// initialise game objects
 
 	player1.setInput(input);
-//	player1.setWindow(hwnd);
+	enemy1.setWindow(window);
 }
 
 Level::~Level()
@@ -32,6 +33,7 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {
 	player1.update(dt);
+	enemy1.update(dt);
 }
 
 // Render level
@@ -39,5 +41,6 @@ void Level::render()
 {
 	beginDraw();
 	window->draw(player1);
+	window->draw(enemy1);
 	endDraw();
 }

@@ -2,7 +2,6 @@
 
 Player::Player()
 {
-
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
 
@@ -23,7 +22,6 @@ void Player::handleInput(float dt) {
 	// Close window on Escape pressed.
 	if (input->isKeyDown(sf::Keyboard::Right))
 	{
-		std::cout << "me when im moving right" << std::endl;
 		setVelocity(200.f, 0);
 	}
 	if (input->isKeyDown(sf::Keyboard::Left))
