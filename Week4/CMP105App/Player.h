@@ -1,25 +1,23 @@
 #pragma once
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include "Framework/BaseLevel.h"
 #include "Framework/Input.h"
-#include "Player.h"
 #include "Framework/GameObject.h"
 #include <string.h>
 #include <iostream>
 
 
-class Level : BaseLevel {
+class Player : public GameObject {
 public:
-	Level(sf::RenderWindow* hwnd, Input* in);
-	~Level();
+	Player();
+	~Player();
 
 	void handleInput(float dt) override;
-	void update(float dt) override;
-	void render() override;
+	void update(float dt) override ;
 
 private:
-	// Level objects
-	Player player1;
+	sf::Texture texture;
 
 };
